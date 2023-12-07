@@ -1,7 +1,14 @@
-import Image from 'next/image'
+import MaxWidthWrapper from "@/components/maxWidthWrapper"
+import React from "react"
+
 
 export default function Home() {
   return (
-    <h1> Hello TS</h1>
+    <MaxWidthWrapper>
+      <div className="py-20 mx-auto text-center flex flex-col max-w-3xl items-center">
+        
+      </div>
+    </MaxWidthWrapper>
+    
   )
 }
