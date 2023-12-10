@@ -16,7 +16,7 @@ interface NavItemProps{
 const NavItem =({isAnyOpen, category, handleOpen, isOpen}:NavItemProps) =>{
 return ( <div className="flex">
         <div className="relative flex items-center pt-3">
-            <Button className="gap-1.5" onClick={handleOpen} variant={isOpen? 'secondary':'ghost'}>
+            <Button className="gap-1.5" onClick={handleOpen} variant={isOpen? 'secondary':'link'}>
                 {category.label}
                 <ChevronDown className={cn('h-4 w-4 transition all text-muted-foreground',{
                     '-rotate-180':isOpen,
@@ -33,7 +33,7 @@ return ( <div className="flex">
                     <div className="max-auto max-w-7xl px-8">
                         <div className="grid grid-cols-4 gap-x-8 gap-y-10 py-16">
                             <div className="col-span-4 col-start-1 grid grid-cols-3 gap-x-8">
-                                
+
                             </div>
                         </div>
                     </div>
