@@ -38,7 +38,7 @@ export const categories =[
             {
                 name: "Best Selling Icons",
                 href: '#',
-                imgSrc: '/nav/ui-kits/bestsellers.jpg'
+                imgSrc: '/nav/icons/bestsellers.jpg'
             },
 
         ]
