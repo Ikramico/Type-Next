@@ -33,7 +33,17 @@ return ( <div className="flex">
                     <div className="max-auto max-w-7xl px-8">
                         <div className="grid grid-cols-4 gap-x-8 gap-y-10 py-16">
                             <div className="col-span-4 col-start-1 grid grid-cols-3 gap-x-8">
+                                {
+                                    category.featured.map((item)=>(
+                                        <div className="group relative text-base sm:text-sm" key={item.name}>
+                                            <div className="realtive aspect-video overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                                                
+                                                <Image src={item.imgSrc} alt='product category image' fill className='object-cover object-center' />
+                                            </div>
+                                        </div>
 
+                                    ))
+                                }
                             </div>
                         </div>
                     </div>
