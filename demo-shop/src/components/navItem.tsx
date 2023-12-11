@@ -38,14 +38,14 @@ return ( <div className="flex">
                                 {
                                     category.featured.map((item)=>(
                                         <div className="group relative text-base sm:text-sm" key={item.name}>
-                                            <div className="realtive aspect-video overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                                            <div className="relative aspect-video overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
                                                 
                                                 <Image src={item.imgSrc} alt='product category image'className='object-cover object-center' fill />
                                             </div>
-                                            <Link href={item.href} className="mt-6 block font-medium text-gray-900">
+                                            <Link href={item.href} className="mt-4 block font-medium text-gray-900 text-center">
                                                 {item.name}
                                             </Link>
-                                            <p className="mt-1" aria-hidden= 'true'>
+                                            <p className="mt-1 block font-medium text-gray-900 text-center" aria-hidden= 'true'>
                                                 Shop Now
                                             </p>
                                         </div>
