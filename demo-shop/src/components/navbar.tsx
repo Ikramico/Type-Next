@@ -4,6 +4,7 @@ import { Blocks } from "lucide-react"
 import { Icons } from "./icons"
 import NavItems from "./navItems"
 import { buttonVariants } from "./ui/button"
+import Cart from "./cart"
 
 const Navbar=()=>{
 
@@ -51,6 +52,10 @@ const Navbar=()=>{
                                         </div>
 
                                     )}
+
+                                    <div className="ml-4 flow-root lg:ml-6">
+                                        <Cart/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
