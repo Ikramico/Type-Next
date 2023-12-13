@@ -3,8 +3,12 @@ import MaxWidthWrapper from "./maxWidthWrapper"
 import { Blocks } from "lucide-react"
 import { Icons } from "./icons"
 import NavItems from "./navItems"
+import { buttonVariants } from "./ui/button"
 
 const Navbar=()=>{
+
+    //dummy user
+    const user = null;
     return(
         <div className="bg-white sticky z-50 top-0 inset-x-0 h-16">
             <header className="relative bg-white">
@@ -20,7 +24,33 @@ const Navbar=()=>{
                             </div>
                             <div className="ml-auto flex items-center">
                                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                                    {user ? null :(
+                                        <Link href='/sign-in' className={`${buttonVariants({variant: 'outline'})} bg-primary text-white`}>
+                                            Sign In
+                                            </Link>
+                                    )}
 
+                                    {user ? null : (
+                                        <span className="h-6 w-px bg-gray-200" aria-hidden='true' />
+                                    )}
+
+                                    {user ? (
+                                        <p></p>
+                                    ):(
+                                        <Link href='/sign-up' className={`${buttonVariants({variant: 'outline'})} hover:bg-primary hover:text-white`}>
+                                            Sign-Up
+                                            </Link>
+                                    )}
+                                    {user ?  (
+                                        <span className="h-6 w-px bg-gray-200" aria-hidden='true' />
+                                    ) : null}
+                                    
+                                    {user ? null : (
+                                        <div className="flex lg:ml-6">
+                                            <span className="h-6 w-px bg-gray-200" aria-hidden='true' />                                        
+                                        </div>
+
+                                    )}
                                 </div>
                             </div>
                         </div>
