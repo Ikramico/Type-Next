@@ -1,7 +1,12 @@
 "Use Client"
+
 import { ShoppingCart } from 'lucide-react';
 import {Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger} from './ui/sheet';
+import { Separator } from '@radix-ui/react-separator';
 const Cart = () =>{
+
+    const itemCount = 1;
+
     return (
         <Sheet>
             <SheetTrigger className='group -m-2 flex items-center p-2'>
@@ -14,6 +19,29 @@ const Cart = () =>{
                 <SheetHeader className="space-y-2.5 pr-6">
                     <SheetTitle> Cart {0} </SheetTitle>
                 </SheetHeader>
+                {itemCount > 0 ? (
+                    <>
+                    <div className="flex w-full flex-col pr-6">
+                        cart items
+                    </div>
+                    <div className="space-y-4 pr-6">
+                        <Separator/>
+                        <div className="space-1.5 text-sm">
+                            <div className="flex">
+                                <span className="flex-1">Shipping</span>
+                                <span>Free</span>
+                            </div>
+                            <div className="flex">
+                                <span className="flex-1">Transaction Fee</span>
+                                <span>1</span>
+                            </div>
+                        </div>
+                    </div>
+                    </>
+                ):(
+                    <div>
+                    </div>
+                )}
             </SheetContent>
         </Sheet>
     )

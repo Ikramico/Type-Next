@@ -1,3 +1,5 @@
+'Use client'
+
 import Link from "next/link"
 import MaxWidthWrapper from "./maxWidthWrapper"
 import { Blocks } from "lucide-react"
