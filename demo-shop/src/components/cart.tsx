@@ -1,9 +1,10 @@
 "Use Client"
 
-import { ShoppingCart } from 'lucide-react';
-import {Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger} from './ui/sheet';
+import { Link, ShoppingCart } from 'lucide-react';
+import {Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger} from './ui/sheet';
 import { Separator } from '@radix-ui/react-separator';
 import { formatPrice } from '../lib/utils';
+import { buttonVariants } from './ui/button';
 const Cart = () =>{
 
     const itemCount = 1;
@@ -37,7 +38,19 @@ const Cart = () =>{
                                 <span className="flex-1">Transaction Fee</span>
                                 <span>{formatPrice(fee)} </span>
                             </div>
+                            <div className="flex">
+                                <span className="flex-1">Total</span>
+                                <span>{formatPrice(fee)} </span>
+                            </div>
                         </div>
+
+                        <SheetFooter>
+                            <SheetTrigger asChild>
+                                <Link href='/cart' className={buttonVariants({className:'w-full'})}>
+                                    Continue to Checkout
+                                </Link>
+                            </SheetTrigger>
+                        </SheetFooter>
                     </div>
                     </>
                 ):(
