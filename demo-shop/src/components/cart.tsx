@@ -1,13 +1,15 @@
 "Use Client"
 
-import { Link, ShoppingCart } from 'lucide-react';
+import {  ShoppingCart } from 'lucide-react';
 import {Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger} from './ui/sheet';
 import { Separator } from '@radix-ui/react-separator';
 import { formatPrice } from '../lib/utils';
 import { buttonVariants } from './ui/button';
+import Link from 'next/link';
+import Image from 'next/image';
 const Cart = () =>{
 
-    const itemCount = 1;
+    const itemCount = 0;
     const fee = 20;
 
     return (
@@ -54,7 +56,10 @@ const Cart = () =>{
                     </div>
                     </>
                 ):(
-                    <div>
+                    <div className='flex h-full flex-col items-center justify-center space-y-1'>
+                        <div className="relative mb-4 h-60 w-60 text-muted-foreground">
+                            <Image src= '/shopping-cart.jpg' fill alt='empty cart'/>
+                        </div>
                     </div>
                 )}
             </SheetContent>
