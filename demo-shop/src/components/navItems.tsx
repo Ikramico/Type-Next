@@ -1,4 +1,4 @@
-"Use client"
+"use client"
 
 import { useEffect, useRef, useState } from "react"
 import { categories } from "../config"

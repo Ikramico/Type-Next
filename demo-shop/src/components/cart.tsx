@@ -3,9 +3,11 @@
 import { ShoppingCart } from 'lucide-react';
 import {Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger} from './ui/sheet';
 import { Separator } from '@radix-ui/react-separator';
+import { formatPrice } from '../lib/utils';
 const Cart = () =>{
 
     const itemCount = 1;
+    const fee = 20;
 
     return (
         <Sheet>
@@ -33,7 +35,7 @@ const Cart = () =>{
                             </div>
                             <div className="flex">
                                 <span className="flex-1">Transaction Fee</span>
-                                <span>1</span>
+                                <span>{formatPrice(fee)} </span>
                             </div>
                         </div>
                     </div>
