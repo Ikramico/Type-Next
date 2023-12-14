@@ -15,10 +15,12 @@ export function formatPrice(
   const { currency = 'USD', notation = 'compact'} = options;
   const numPrice = typeof price === 'string'?parseFloat(price) : price;
 
-  return new Intl.NumberFormat('en-US', {
+  const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency,
     notation,
     maximumFractionDigits: 2
   })
+
+  return formatter.format(numPrice);
 }
