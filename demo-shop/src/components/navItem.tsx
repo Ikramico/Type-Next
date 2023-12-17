@@ -45,7 +45,7 @@ return ( <div className="flex">
                                             <Link href={item.href} className="mt-4 block font-medium text-gray-900 text-center">
                                                 {item.name}
                                             </Link>
-                                            <p className="mt-1 block font-medium text-gray-900 text-center" aria-hidden= 'true'>
+                                            <p className="mt-1 block font-medium text-gray-900 text-center text-emerald-500" aria-hidden= 'true'>
                                                 Shop Now
                                             </p>
                                         </div>

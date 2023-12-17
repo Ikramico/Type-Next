@@ -1,3 +1,4 @@
+import { error } from 'console';
 import dotenv from 'dotenv';
 import path from 'path';
 import payload from 'payload';
@@ -35,6 +36,15 @@ export const  getPayloadClient =async ({
     if(!cached.promise){
         cached.promise = payload.init({
             secret: process.env.PAYLOAD_SECRET,
+            local: initOptions?.express ? false : true,
+            ...(initOptions || {}),
         })
     }
+    try{
+        cached.client = await cached.promise
+    } catch(e: unknown){
+        cached.promise = null
+        throw e
+    }
+    return cached.client
 }
