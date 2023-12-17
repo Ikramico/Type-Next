@@ -40,7 +40,7 @@ const Navbar=()=>{
                                     {user ? (
                                         <p></p>
                                     ):(
-                                        <Link href='/sign-up' className={`${buttonVariants({variant: 'outline'})} hover:bg-primary hover:text-white`}>
+                                        <Link href='/sign-up' className={`${buttonVariants({variant: 'outline'})} text-gray-900 hover:bg-primary hover:text-white`}>
                                             Sign-Up
                                             </Link>
                                     )}
