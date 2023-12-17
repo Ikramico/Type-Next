@@ -5,5 +5,5 @@ const app = express();
 const port = Number(process.env.PORT) || 3000;
 
 const start = async() =>{
-    const payload = await getPayloadClient()
+    const payload = await getPayloadClient();
 }
