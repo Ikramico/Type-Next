@@ -1,14 +1,14 @@
 import { buildConfig } from 'payload/config'
-import { BaseDatabaseAdapter } from 'payload/dist/database/types'
-import { Payload } from 'payload/dist/payload'
+import {mongooseAdapter} from '@payloadcms/db-mongodb';
+import { slateEditor } from '@payloadcms/richtext-slate';
 
 export default buildConfig({
-    db: function (args: { payload: Payload }): BaseDatabaseAdapter {
-        throw new Error('Function not implemented.')
-    },
-    editor: lexicalEditor({}),
+    db: mongooseAdapter({
+        url: process.env.MONGODB_URL!,
+    }),
+    editor: slateEditor({}),
 })
 
-function lexicalEditor(arg0: {}): import("payload/dist/exports/types").RichTextAdapter<any, any, any> {
-    throw new Error('Function not implemented.')
-}
+
+
+
