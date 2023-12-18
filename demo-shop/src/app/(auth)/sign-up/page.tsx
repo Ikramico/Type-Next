@@ -1,7 +1,7 @@
 import { Input } from "@/src/components/ui/input";
 import { Label } from "@/src/components/ui/label";
 import { Icons } from "@/src/components/icons"
-import { buttonVariants } from "@/src/components/ui/button";
+import { Button, buttonVariants } from "@/src/components/ui/button";
 import { cn } from "@/src/lib/utils";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -30,15 +30,19 @@ const Page = () =>{
                         <div className="grid gap-2">
                             <div className="grid gap-1 py-2">
                                 <Label htmlFor="email">Email</Label>
-                                <Input className={cn({'focus-visible:ring-rd-500': true})} placeholder="mail@host.com" />
+                                <Input className={cn({'focus-visible:bg-red-200 focus-visible:ring-gray-200': true})} placeholder="mail@host.com" />
                             </div>
                         </div>
                         <div className="grid gap-2">
                             <div className="grid gap-1 py-2">
-                                <Label htmlFor="password">Password</Label>
-                                <Input className={cn({'focus-visible:ring-rd-500': true})} placeholder="mail@host.com" />
+                                <Label htmlFor="password mb-5">Password</Label>
+                                <Input className={cn({'focus-visible:bg-red-200 focus-visible:ring-gray-200': true})} placeholder="password" />
                             </div>
                         </div>
+
+                        <Button className={buttonVariants({variant:'link', className:'text-white px-20 mt-10 justify-center'})}>
+                            Sign Up
+                        </Button>
                     </form>
                 </div>
             </div>
