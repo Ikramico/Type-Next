@@ -1,5 +1,8 @@
+import { Input } from "@/src/components/ui/input";
+import { Label } from "@/src/components/ui/label";
 import { Icons } from "@/src/components/icons"
 import { buttonVariants } from "@/src/components/ui/button";
+import { cn } from "@/src/lib/utils";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -20,6 +23,23 @@ const Page = () =>{
                         Already have an account? Sign-in
                         <ArrowRight className="h-4 w-4" />
                     </Link>
+                </div>
+
+                <div className="grid gap-6">
+                    <form >
+                        <div className="grid gap-2">
+                            <div className="grid gap-1 py-2">
+                                <Label htmlFor="email">Email</Label>
+                                <Input className={cn({'focus-visible:ring-rd-500': true})} placeholder="mail@host.com" />
+                            </div>
+                        </div>
+                        <div className="grid gap-2">
+                            <div className="grid gap-1 py-2">
+                                <Label htmlFor="password">Password</Label>
+                                <Input className={cn({'focus-visible:ring-rd-500': true})} placeholder="mail@host.com" />
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
