@@ -2,6 +2,7 @@ import { buildConfig } from 'payload/config'
 import {mongooseAdapter} from '@payloadcms/db-mongodb';
 import { slateEditor } from '@payloadcms/richtext-slate';
 import { webpackBundler } from '@payloadcms/bundler-webpack';
+import path from 'path';
 
 export default buildConfig({
     db: mongooseAdapter({
@@ -23,6 +24,9 @@ export default buildConfig({
     collections: [],
     routes:{
         admin: '/sell'
+    },
+    typescript: {
+        outputFile : path.resolve(__dirname, 'payload-types.ts')
     }
 })
 
