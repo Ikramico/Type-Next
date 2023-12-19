@@ -8,20 +8,19 @@ import Link from "next/link";
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod'
 import z from "zod";
+import { TAuthCredentialsValodator, AuthCredentialsValidator } from "@/src/lib/validators/account-credentials";
 
 
 
 const Page = () =>{
 
-    const AuthCredentialsValidator = z.object({
-        email: z.string().email(),
-        password: z.string().min(8, {message: 'Minimum 8 chararacters are required'})
-    })
-    type TAuthCredentialsValodator = z.infer<typeof AuthCredentialsValidator>
-
     const {register, handleSubmit, formState:{errors}} = useForm<TAuthCredentialsValodator>({
         resolver: zodResolver(AuthCredentialsValidator)
     });
+
+    const onSub =({email, password}: TAuthCredentialsValodator) =>{
+        
+    }
     return(
         <>
         <div className="container relative flex pt-20 flex-col items-center justify-center lg:space-x-6">
@@ -39,7 +38,7 @@ const Page = () =>{
                 </div>
 
                 <div className="grid gap-6">
-                    <form >
+                    <form onSubmit={handleSubmit(onSub)}>
                         <div className="grid gap-2">
                             <div className="grid gap-1 py-2">
                                 <Label htmlFor="email">Email</Label>
