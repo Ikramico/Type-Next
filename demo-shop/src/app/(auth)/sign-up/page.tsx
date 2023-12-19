@@ -5,10 +5,23 @@ import { Button, buttonVariants } from "@/src/components/ui/button";
 import { cn } from "@/src/lib/utils";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import {useForm} from 'react-hook-form';
+import {zodResolver} from '@hookform/resolvers/zod'
+import z from "zod";
 
 
 
 const Page = () =>{
+
+    const AuthCredentialsValidator = z.object({
+        email: z.string().email(),
+        password: z.string().min(8, {message: 'Minimum 8 chararacters are required'})
+    })
+    type TAuthCredentialsValodator = z.infer<typeof AuthCredentialsValidator>
+
+    const {register, handleSubmit, formState:{errors}} = useForm<TAuthCredentialsValodator>({
+        resolver: zodResolver(AuthCredentialsValidator)
+    });
     return(
         <>
         <div className="container relative flex pt-20 flex-col items-center justify-center lg:space-x-6">
@@ -30,13 +43,13 @@ const Page = () =>{
                         <div className="grid gap-2">
                             <div className="grid gap-1 py-2">
                                 <Label htmlFor="email">Email</Label>
-                                <Input className={cn({'focus-visible:bg-red-200 focus-visible:ring-gray-200': true})} placeholder="mail@host.com" />
+                                <Input {...register('email')} className={cn({'focus-visible:bg-red-200 focus-visible:ring-gray-200': errors.email})} placeholder="mail@host.com" />
                             </div>
                         </div>
                         <div className="grid gap-2">
                             <div className="grid gap-1 py-2">
                                 <Label htmlFor="password mb-5">Password</Label>
-                                <Input className={cn({'focus-visible:bg-red-200 focus-visible:ring-gray-200': true})} placeholder="password" />
+                                <Input {...register('password')} className={cn({'focus-visible:bg-red-200 focus-visible:ring-gray-200': errors.password})} placeholder="password" />
                             </div>
                         </div>
 
