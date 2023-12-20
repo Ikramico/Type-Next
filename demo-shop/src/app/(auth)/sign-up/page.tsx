@@ -1,3 +1,5 @@
+'use client'
+
 import { Input } from "@/src/components/ui/input";
 import { Label } from "@/src/components/ui/label";
 import { Icons } from "@/src/components/icons"
