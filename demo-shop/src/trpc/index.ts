@@ -6,3 +6,5 @@ export const appRouter = router({
         return 'hi there'
     })
 })
+
+export type AppRouter = typeof appRouter;
