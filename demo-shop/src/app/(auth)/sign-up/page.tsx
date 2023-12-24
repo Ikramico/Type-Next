@@ -9,7 +9,6 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod'
-import z from "zod";
 import { TAuthCredentialsValodator, AuthCredentialsValidator } from "@/src/lib/validators/account-credentials";
 import { trpc } from "@/src/trpc/client";
 
