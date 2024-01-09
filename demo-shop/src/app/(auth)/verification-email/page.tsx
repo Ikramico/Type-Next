@@ -5,7 +5,13 @@ interface PageProps{
 }
 
 const VerifyEmailPage =({searchParams}: PageProps) =>{
-
+    return (
+        <div className="container relative flex pt-20 flex-col items-center justify-center lg:px-0">
+            <div className="mx-auto fulex w-full flex-col justify-center sm:w-[350px]">
+                {}
+            </div>
+        </div>
+    )
 }
 
 export default VerifyEmailPage;
