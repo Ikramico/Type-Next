@@ -1,4 +1,10 @@
-const VerifyEmailPage =() =>{
+interface PageProps{
+    searchParams:{
+        [key: string]: string |string[] |undefined
+    }
+}
+
+const VerifyEmailPage =({searchParams}: PageProps) =>{
 
 }
 
