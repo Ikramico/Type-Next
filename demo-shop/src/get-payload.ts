@@ -48,7 +48,7 @@ export const  getPayloadClient =async ({
         cached.promise = payload.init({
             email:{
                 transport: transporter,
-                fromAddress: 'onboarding@resend.com',
+                fromAddress: 'ikramicono@gmail.com',
                 fromName: 'Ikram Ico'
             },
             secret: process.env.PAYLOAD_SECRET,
