@@ -11,17 +11,24 @@ import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod'
 import { TAuthCredentialsValodator, AuthCredentialsValidator } from "@/src/lib/validators/account-credentials";
 import { trpc } from "@/src/trpc/client";
+import {toast} from 'sonner';
 
 
 
 const Page = () =>{
 
     const {register, handleSubmit, formState:{errors}} = useForm<TAuthCredentialsValodator>({
-        resolver: zodResolver(AuthCredentialsValidator)
+        resolver: zodResolver(AuthCredentialsValidator),
     });
 
     const {mutate, isLoading} = trpc.auth.createPayloadUser.useMutation({
-
+        
+            onError: (err) =>{
+                if(err.data?.code === 'CONFLICT'){
+                    toast
+                }
+            },
+        
     });
     
 
